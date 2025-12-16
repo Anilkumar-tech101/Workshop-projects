@@ -59,21 +59,21 @@
 
 
 
-def arms_number(a,b):
-  for i in range(a, b+1):
-    num =str(i)
-    digits = len(num)
-    sum=0
+# def arms_number(a,b):
+#   for i in range(a, b+1):
+#     num =str(i)
+#     digits = len(num)
+#     sum=0
 
-    for n in num:
-      sum += int(n)**digits
+#     for n in num:
+#       sum += int(n)**digits
 
-    if sum == i:
-      print(sum)
-a=int(input("Enter first number: "))
-b=int(input("Enter second number: "))
+#     if sum == i:
+#       print(sum)
+# a=int(input("Enter first number: "))
+# b=int(input("Enter second number: "))
 
-arms_number(a,b)
+# arms_number(a,b)
 
 # def armstrong_numbers(a, b):
 #     return [
