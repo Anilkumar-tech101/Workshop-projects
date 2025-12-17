@@ -83,3 +83,55 @@
 
 
 # print(armstrong_numbers(1, 1000))
+
+
+
+
+
+def check_string_order_and_pv(s):
+    if len(s) < 2:
+        return "Not enough characters"
+
+    asc = True
+    strict_asc = True
+    desc = True
+    strict_desc = True
+
+    peak = False
+    valley = False
+
+    for i in range(len(s) - 1):
+        if s[i] > s[i + 1]:
+            asc = False
+            strict_asc = False
+        elif s[i] < s[i + 1]:
+            desc = False
+            strict_desc = False
+        else: 
+            strict_asc = False
+            strict_desc = False
+
+    for i in range(1, len(s) - 1):
+        if s[i] > s[i - 1] and s[i] > s[i + 1]:
+            peak = True
+        elif s[i] < s[i - 1] and s[i] < s[i + 1]:
+            valley = True
+
+
+    if strict_asc:
+        return "Strict Ascending"
+    if asc:
+        return "Ascending"
+    if strict_desc:
+        return "Strict Descending"
+    if desc:
+        return "Descending"
+    if peak and valley:
+        return "Peaks & Valleys"
+    if peak:
+        return "Peak pattern"
+    if valley:
+        return "Valley pattern"
+
+    return "Unordered"
+print(check_string_order_and_pv("abvbb"))
